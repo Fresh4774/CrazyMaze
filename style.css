@@ -1,0 +1,108 @@
+body {
+  margin: 0;
+  overflow: hidden;
+  background: #0F0F0F;
+}
+p {
+  font-family: sans-serif;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;  
+  margin: 0;
+  padding: 0.5em;
+  color: #fff;
+}
+a {
+  text-decoration: underline;
+  color: inherit;
+}
+.building p {
+  pointer-events: none;
+}
+svg {
+  width: 100vw;
+  height: calc(100vh - 3rem);
+}
+#ball {
+  fill: #CDFADB;
+  transition: transform 0.3s ease-in;
+  pointer-events: none;
+}
+.solved #ball{
+  animation: grow 0.7s 0.3s ease-out forwards;
+}
+@keyframes grow {
+  to {
+    fill: #CDFADB;
+    opacity: 0.3;
+    r: 38px;
+  }
+}
+line, g circle {
+  fill: none; 
+  stroke: #fff; 
+  stroke-width: 4; 
+  stroke-linecap: square;
+}
+path { 
+  fill: none; 
+  stroke: #CDFADB; 
+  stroke-width: 4; 
+  stroke-linejoin: round; 
+  stroke-linecap: round; 
+  display: none; 
+  pointer-events: none;
+}
+#center { 
+  pointer-events: all; 
+  cursor: pointer;
+}
+#center:hover ~ path {
+  display: inline;
+}
+
+#direct {
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  width: 6rem;
+  height: 6rem;
+  transform: rotate(90deg);
+  transition: transform 0.3s ease-in, opacity 0.3s linear;
+  border: 2px solid #CDFADB;
+  border-radius: 50%;
+  padding: 0.75rem;
+}
+.solved #direct, .building #direct {
+  opacity: 0;
+}
+.col, .row {
+  display: flex;
+  align-content: center;
+  align-items: stretch;
+}
+.col {
+  flex-direction: column;
+}
+.row {
+  flex-direction: row;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  height: 2rem;
+}
+.row.spaced {
+  justify-content: space-between;
+}
+button {
+  box-sizing: border-box;
+  width: 2rem;
+  height: 2rem;
+  color: #0F0F0F;
+  font-weight: 200;
+  font-size: 1.4rem;
+}
+button:disabled {
+  font-weight: normal;
+}

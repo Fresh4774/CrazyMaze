@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Crazy Maze</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<svg>
+<g></g>
+<circle id="ball" r="6"/>
+</svg>
+<p class="hi">Use the control panel to travel, Touch the center to view map<br/>Reload to get a new maze<a href="javascript:init('prims')">short</a>, <a href="javascript:init('depthFirst')">long</a> or <a href="javascript:init('wilsons')">random</a></p>
+<div id="direct" class="col">
+  <div class="row"><button id="btnUp1">↑</button><button id="btnUp2">↑</button></div>
+  <div class="row spaced"><button id="btnLeft">←</button><button id="btnRight">→</button></div>
+  <div class="row"><button id="btnDown">↓</button></div>
+</div>
+  <script  src="./script.js"></script>
+</body>
+</html>
